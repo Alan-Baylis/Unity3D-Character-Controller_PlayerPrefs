@@ -3,7 +3,7 @@ Use of these scripts is free (http://unlicense.org). Crediting the author (me! :
 These scripts may sometimes serve purposes already covered by standard Unity assets, but mine are generally easier to understand and shorter/ lighter weight, allowing for more customizability. They will, furthermore, generally be made to fit standard/ default PC control schemes where applicable and may not work on other platforms.
 
 # Important Reminder:
-Whenever you use a script from this repository, make sure to read the documentation comment attached to the top of the script, as well as the usage comments beside public variables to make sure you are using the script correctly. Also attached are explanatory comments that explain code segments, but these should not be necessary to use unless you are editing the script directly.
+Whenever you use a script from this repository, make sure to read the documentation comment attached to the top of the script to make sure you are using the script correctly. Also attached are explanatory comments that explain code segments, but these should not be necessary to use unless you are editing the script directly.
 
 # Using this script bundle as a first-person controller:
 
