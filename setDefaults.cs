@@ -24,7 +24,6 @@ public class setDefaults : MonoBehaviour {
 		PlayerPrefs.SetFloat ("movementSpeed", 2.5f);
 		PlayerPrefs.SetFloat ("sprintMultiplier", 2.0f);
 		//control preferences
-		PlayerPrefs.SetString ("attackKey", "mouse 0");
 		PlayerPrefs.SetString ("forwardMoveKey", "w");
 		PlayerPrefs.SetString ("backwardMoveKey", "s");
 		PlayerPrefs.SetString ("rightMoveKey", "d");
