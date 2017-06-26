@@ -1,7 +1,10 @@
 **Table of Contents**
 [This Repository and It's Content](#)
+
 [Important Reminder](#)
+
 [Using this script bundle as a first-person controller](#)
+
 [Using this script bundle as a third-person controller](#)
 
 # This Repository and It's Content
