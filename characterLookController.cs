@@ -15,17 +15,16 @@ using System.Collections.Generic;
 using UnityEngine;
 public class characterLookController : MonoBehaviour {
 	//PlayerPrefs variables
-	float sensitivity;
-	float smooth;
-	float maxY;
-	float minY;
-	float invertVertical;
-	float invertHorizontal;
+	private float sensitivity;
+	private float smooth;
+	private float maxY;
+	private float minY;
+	private float invertVertical;
+	private float invertHorizontal;
 	//locals
-	Vector2 smoothV;
-	Vector2 eulerAnglesVar;
-	//Declarations and initializations
-	GameObject character;
+	private Vector2 smoothV;
+	private Vector2 eulerAnglesVar;
+	private GameObject character;
 	void Start () {
 		//innitializes the PlayerPrefs variables
 		sensitivity = PlayerPrefs.GetFloat ("sensitivity");
@@ -38,16 +37,15 @@ public class characterLookController : MonoBehaviour {
 		character = this.transform.parent.gameObject;
 	}
 	//Rotating the mouse
-	private void Update() {
+	void LateUpdate() {
 		// Move and smooth
-		Vector2 mouseMove = new Vector2 (Input.GetAxisRaw ("Mouse X"), Input.GetAxisRaw ("Mouse Y"));
-		mouseMove *= sensitivity * smooth;
-		smoothV.x = Mathf.Lerp (smoothV.x, mouseMove.x, 1f / smooth);
-		smoothV.y = Mathf.Lerp (smoothV.y, mouseMove.y, 1f / smooth);
+		Vector2 mouseMove = new Vector2 (Input.GetAxis ("Mouse X"), Input.GetAxis ("Mouse Y"));
+		mouseMove *= sensitivity;
+		smoothV.x = Mathf.LerpAngle (smoothV.x, mouseMove.x, (Time.smoothDeltaTime * smooth));
+		smoothV.y = Mathf.LerpAngle (smoothV.y, mouseMove.y, (Time.smoothDeltaTime * smooth));
 		// Euler rotation
-		eulerAnglesVar.x += smoothV.y * invertVertical;
+		eulerAnglesVar.x = Mathf.Clamp ((eulerAnglesVar.x + smoothV.y * invertVertical), minY, maxY);
 		eulerAnglesVar.y += smoothV.x * invertHorizontal;
-		eulerAnglesVar.x = Mathf.Clamp(eulerAnglesVar.x, minY, maxY);
 		//apply Changes
 		transform.localRotation = Quaternion.AngleAxis (-eulerAnglesVar.x, Vector3.right);
 		character.transform.localRotation = Quaternion.AngleAxis (eulerAnglesVar.y, character.transform.up);
