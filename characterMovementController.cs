@@ -19,20 +19,20 @@ using System.Collections.Generic;
 using UnityEngine;
 public class characterMovementController : MonoBehaviour {
 	//PlayerPrefs variables
-	float walkSpeed;
-	float sprintMultiplier;
-	string forwardMove;
-	string backwardMove;
-	string leftMove;
-	string rightMove;
-	string sprint;
-	string autoSprintToggle;
-	string escape;
+	private float walkSpeed;
+	private float sprintMultiplier;
+	private string forwardMove;
+	private string backwardMove;
+	private string leftMove;
+	private string rightMove;
+	private string sprint;
+	private string autoSprintToggle;
+	private string escape;
 	//locals
-	float speed;
-	bool autoSprint = false;
-	int vertical = 0;
-	int horizontal = 0;
+	private float speed;
+	private bool autoSprint = false;
+	private int vertical = 0;
+	private int horizontal = 0;
 	//initializing the cursor lockstate
 	void Start () {
 		//innitializes all the PlayerPrefs variables
