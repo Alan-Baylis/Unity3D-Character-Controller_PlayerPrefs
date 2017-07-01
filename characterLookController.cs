@@ -30,7 +30,7 @@ public class characterLookController : MonoBehaviour {
 		sensitivity = PlayerPrefs.GetFloat ("sensitivity");
 		smooth = PlayerPrefs.GetFloat ("smoothLook");
 		maxY = PlayerPrefs.GetFloat ("maxYAngle");
-		minY = PlayerPrefs.GetFloat ("minYAngle");;
+		minY = PlayerPrefs.GetFloat ("minYAngle");
 		invertVertical = PlayerPrefs.GetInt ("invertX");
 		invertHorizontal = PlayerPrefs.GetInt ("invertX");
 		//this innitializes the character as the parent object
